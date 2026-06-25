@@ -2,13 +2,19 @@
 //el require es como el import de python 
 const express = require('express')
 const clienteController = require('./controllers/cliente.controller')
+const app = express()
 //require es como el import de python para traer codigo de otros archivos
 
 
-const app = express()
-app.set('view engine', 'ejs');
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+
+const enrutamiento = require('./routes/enrutamiento.router')
+
+app.use('/api/v1', enrutamiento)
+
+app.set('view engine', 'ejs');
+
 
 //crear el endponint para poder hacer en local el consumo del api
 //esto es una api restfull get, post, put, delete
@@ -18,7 +24,7 @@ app.get('/saludar', clienteController.saludar)
 
 app.get('/clientes/:correo', clienteController.buscar)
 
-app.post('/clientes', clienteController.registrar)
+app.post('/clientes/', clienteController.registrar)
 
 
 app.put('/clientes/:correo', clienteController.actualizar)

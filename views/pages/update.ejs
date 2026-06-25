@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+    
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+<form action="/api/v1/clientes/actualizar" method="POST">
+  <div class="mb-3">
+    <span class="mb-3 mt-3"> <%- mensaje %> </span>
+    <label for="exampleInputEmail1" class="form-label">email a buscar</label>
+    <input type="text" name="emailBuscar" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onblur="cargardatos()">
+    <label for="exampleInputEmail1" class="form-label">Nombre</label>
+    <input type="text" name="nombre" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">email</label>
+    <input type="email" name="email" class="form-control" id="emaileditar">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">telefono</label>
+    <input type="number" name="telefono" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+</main>
+ 
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+<script>
+  function cargardatos(){
+    fetch()
+
+    document.getElementById('emaileditar').value = data,email
+  }
+</script>
+</body>
+</html>

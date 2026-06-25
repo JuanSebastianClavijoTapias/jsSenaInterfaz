@@ -33,21 +33,23 @@ exports.buscar = async (req,res)=>{
   }
 }
 
+exports.formulario = (req, res) => {
+  res.render('pages/registrar', {mensaje: ""})
+}
+
 exports.registrar = async (req,res)=>{
-
   try {
-
     let clienteNuevo = {
-        nombre: req.body.nombre,
-        email: req.body.email,
-        telefono: req.body.telefono,
-
+      nombre: req.body.nombre,
+      email: req.body.email,
+      telefono: req.body.telefono,
     }
     const clientes = await modeloCliente.insertOne(clienteNuevo)
     if (!clientes) {
-           return res.status(404).json({ mensaje: 'cliente no encontrado' });
+           return res.render('pages/registrar', {mensaje: "No pudo registrar"})
        }
-    res.json(clientes);
+    res.render('pages/registrar', {mensaje: "Registrado exitosamente"});
+
 
     
   } catch (error) {
@@ -55,6 +57,11 @@ exports.registrar = async (req,res)=>{
   }
 }
 
+
+
+exports.update = (req, res) => {
+  res.render('pages/update', {mensaje: ""})
+}
 
 
 exports.actualizar = async (req,res)=>{
@@ -68,14 +75,14 @@ exports.actualizar = async (req,res)=>{
 
     }
     const clientes = await modeloCliente.updateOne(
-        {email: req.params.correo},
+        {email: req.body.emailBuscar},
         {$set:clienteNuevo}
 
     )
     if (!clientes) {
            return res.status(404).json({ mensaje: 'cliente no encontrado' });
        }
-    res.json(clientes);
+    res.redirect('/api/v1/');
 
     
   } catch (error) {
