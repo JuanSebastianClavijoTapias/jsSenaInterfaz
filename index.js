@@ -1,0 +1,36 @@
+//estamos utilizando express toca guardarlo en una variable con su constructor
+//el require es como el import de python 
+const express = require('express')
+const clienteController = require('./controllers/cliente.controller')
+//require es como el import de python para traer codigo de otros archivos
+
+
+const app = express()
+app.set('view engine', 'ejs');
+app.use(express.json())
+app.use(express.urlencoded({extended:false}))
+
+//crear el endponint para poder hacer en local el consumo del api
+//esto es una api restfull get, post, put, delete
+
+app.get('/', clienteController.listar)
+app.get('/saludar', clienteController.saludar)
+
+app.get('/clientes/:correo', clienteController.buscar)
+
+app.post('/clientes', clienteController.registrar)
+
+
+app.put('/clientes/:correo', clienteController.actualizar)
+
+app.delete('/clientes/:correo', clienteController.borrar)
+app.listen(process.env.PORT || 8000)
+
+/*el proceso para crear un proyecto en django es
+    1. npm init
+    2.npm i dependencias a utilizar
+    2.npm i dependencias -D de desarrollo
+    3. actualizar el package para los scripts start con el main.js, dev: nodemon para el desarrollo
+    4. crear el archivo y estructura para utilizar el express en variable crear la app y el listen que es el puerto
+    
+*/
