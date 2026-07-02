@@ -1,48 +1,28 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
- <div class="container-fluid">
-   <a class="navbar-brand" href="#">Logo</a>
-   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-     <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="collapsibleNavbar">
-     <ul class="navbar-nav">
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Clientes</a>
-         <ul class="dropdown-menu">
-           <li><a class="dropdown-item" href="/api/v1/formulario">Registrar</a></li>
-           <li><a class="dropdown-item" href="/api/v1/up">update</a></li>
-           <li><a class="dropdown-item" href="/api/v1/">Listar</a></li>
-         </ul>
-       </li>
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Productos</a>
-         <ul class="dropdown-menu">
-       <li><a class="dropdown-item" href="#">Registrar</a></li>
-           <li><a class="dropdown-item" href="#">Listar</a></li>
-         </ul>
-       </li>
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
-         <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="#">Registrar</a></li>
-           <li><a class="dropdown-item" href="#">Listar</a></li>
-         </ul>
-       </li> 
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Productos</a>
-         <ul class="dropdown-menu">
-       <li><a class="dropdown-item" href="#">Registrar</a></li>
-           <li><a class="dropdown-item" href="#">Listar</a></li>
-         </ul>
-       </li>
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
-         <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="#">Registrar</a></li>
-           <li><a class="dropdown-item" href="#">Listar</a></li>
-         </ul>
-       </li> 
-     </ul>
-   </div>
- </div>
-</nav>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hola</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-logo">Mi<span>Marca</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="nav-cta">Empieza ahora</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>

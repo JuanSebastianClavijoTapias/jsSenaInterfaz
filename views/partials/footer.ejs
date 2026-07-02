@@ -3,6 +3,32 @@
 <script  src="https://cdn.datatables.net/2.3.8/js/dataTables.js"></script>
 <script src="https://cdn.datatables.net/2.3.8/js/dataTables.bootstrap5.js"></script>
 
-<script>new DataTable('#tablita');</script>
 
-<p class="text-center text-muted">© Copyright 2020 The Awesome People</p>
+<script>
+    
+ $('#tablita').DataTable({
+    language: {
+        url: '', // Elimina esta línea o coméntala
+        // O configura el idioma directamente:
+        sProcessing: "Procesando...",
+        sLengthMenu: "Mostrar _MENU_ registros",
+        sZeroRecords: "No se encontraron resultados",
+        sEmptyTable: "Ningún dato disponible en esta tabla",
+        sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+        sInfoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+        sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
+        sSearch: "Buscar:",
+        oPaginate: {
+            sFirst: "Primero",
+            sLast: "Último",
+            sNext: "Siguiente",
+            sPrevious: "Anterior"
+        }
+    }
+});
+
+
+
+
+
+</script>

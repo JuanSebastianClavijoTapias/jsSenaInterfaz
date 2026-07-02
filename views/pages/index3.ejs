@@ -3,45 +3,72 @@
 <head>
     <%- include('../partials/head'); %>
 </head>
-<body class="container">
+<body>
     <header>
         <%- include('../partials/header'); %>
-        
     </header>
 
+    <main class="main">
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="/video/fondo.mp4" type="video/mp4">
+            </video>
 
-    <main>
-        <div class="jumbotron">
-            <h1>Top Productos   </h1>
-            
-            <ul>
-                <table id="tablita" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>nombre</th>
-                            <th>email</th>
-                            <th>telefono</th>
-        
-                        </tr>
-                    </thead>
-                    <tbody>
-            <% c.forEach(function(i) { %>
-            <tr>
-                <td><%= i.nombre %></td>
-                <td><%= i.email %></td>
-                <td><%= i.telefono %></td>
+            <div class="hero-overlay"></div>
 
-            </tr>
-        </ul>
-                <% }); %>
+
+<div class="content">
+    <div class="container hero-grid">
+        <div class="hero-text">
+            <h1>Landing Page</h1>
+            <p>Describe aquí el valor de tu producto en una frase clara y directa.</p>
         </div>
+
+        <form class="hero-form" id="heroForm" action="/api/v1/enviar" method="POST">
+            <h3>Solicita tu demo</h3>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <input type="text" id="nombre" name="email" placeholder=" " required>
+                    <label for="nombre">email</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="apellido" name="asunto" placeholder="" required>
+                    <label for="apellido">asunto</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <input type="text" id="telefono" name="mensaje" placeholder=" " required>
+                    <label for="telefono">mensaje</label>
+                </div>
+            </div>
+
+
+           
+
+            
+
+            <button type="submit" class="btn-submit">
+                <span>Enviar solicitud</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+
+            <p class="form-note">Sin spam. Respondemos en menos de 24h.</p>
+        </form>
+    </div>
+</div>
+            </div>
+        </section>
+
+        <div class="container2"></div>
     </main>
 
     <footer>
         <%- include('../partials/footer'); %>
     </footer>
-
 </body>
 </html>
-
-
